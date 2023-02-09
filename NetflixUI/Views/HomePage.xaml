@@ -14,7 +14,7 @@
             Margin="0,-28,0,0"
             VerticalScrollBarVisibility="Never">
 
-            <Grid RowDefinitions="70,480,*">
+            <Grid RowDefinitions="70,510,*">
 
                 <Image
                     Grid.RowSpan="2"
@@ -46,18 +46,34 @@
 
                 <Grid
                     Grid.Row="1"
-                    Padding="10"
+                    Padding="10,28,10,10"
                     ColumnDefinitions="*,*,*"
                     ColumnSpacing="25"
                     HorizontalOptions="Center"
                     VerticalOptions="Start">
-                    <Label Text="TV Shows" />
-                    <Label Grid.Column="1" Text="Movies" />
-                    <Label Grid.Column="2">
+                    <Label
+                        FontFamily="Bold"
+                        FontSize="16"
+                        Text="TV Shows" />
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="Bold"
+                        FontSize="16"
+                        Text="Movies" />
+                    <Label
+                        Grid.Column="2"
+                        FontFamily="Bold"
+                        FontSize="16">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="Categories" />
-                                <Span FontFamily="MaterialIcons" Text="{x:Static icons:IconFont.Arrow_drop_down}" />
+                                <Span
+                                    FontFamily="Bold"
+                                    FontSize="16"
+                                    Text="Categories" />
+                                <Span
+                                    FontFamily="MaterialIcons"
+                                    FontSize="16"
+                                    Text="{x:Static icons:IconFont.Arrow_drop_down}" />
 
                             </FormattedString>
                         </Label.FormattedText>
@@ -146,7 +162,7 @@
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Grid Padding="10,0">
+                                <Grid Padding="5,0">
                                     <Image
                                         Aspect="AspectFill"
                                         BackgroundColor="Transparent"
@@ -172,7 +188,7 @@
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Grid Padding="10,0">
+                                <Grid Padding="5,0">
                                     <Image
                                         Aspect="AspectFill"
                                         BackgroundColor="Transparent"
@@ -197,7 +213,7 @@
 
 
         </ScrollView>
-        <Border Background="Black" Opacity=".1" />
+        <Border Background="Black" Opacity="0" />
         <Image
             Margin="20,0,0,0"
             HeightRequest="40"
