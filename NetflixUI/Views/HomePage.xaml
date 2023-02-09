@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="NetflixUI.Views.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:icons="clr-namespace:NetflixUI.Services"
+    xmlns:vm="clr-namespace:NetflixUI.ViewModels"
+    Title="HomePage"
+    x:DataType="vm:HomePageViewModel">
+    <Grid Padding="0,28,0,0" RowDefinitions="70,*">
+
+        <ScrollView
+            Grid.RowSpan="2"
+            Margin="0,-28,0,0"
+            VerticalScrollBarVisibility="Never">
+
+            <Grid RowDefinitions="70,480,*">
+
+                <Image
+                    Grid.RowSpan="2"
+                    Aspect="AspectFill"
+                    Source="spidermanwide" />
+                <!--<BoxView
+            Grid.RowSpan="2"
+            Background="Black"
+            Opacity=".2"
+            Color="Black" />-->
+                <BoxView
+                    Grid.RowSpan="2"
+                    Margin="0"
+                    HorizontalOptions="Fill"
+                    Opacity="0.95"
+                    VerticalOptions="Fill"
+                    Color="Transparent">
+                    <BoxView.Background>
+                        <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                            <GradientStop Offset="0.0" Color="Transparent" />
+                            <GradientStop Offset="0.25" Color="Transparent" />
+                            <GradientStop Offset="0.5" Color="Transparent" />
+                            <GradientStop Offset=".95" Color="Black" />
+                            <GradientStop Offset="1" Color="Black" />
+                        </LinearGradientBrush>
+                    </BoxView.Background>
+                </BoxView>
+
+
+                <Grid
+                    Grid.Row="1"
+                    Padding="10"
+                    ColumnDefinitions="*,*,*"
+                    ColumnSpacing="25"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start">
+                    <Label Text="TV Shows" />
+                    <Label Grid.Column="1" Text="Movies" />
+                    <Label Grid.Column="2">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Categories" />
+                                <Span FontFamily="MaterialIcons" Text="{x:Static icons:IconFont.Arrow_drop_down}" />
+
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Grid.Column="3" />
+                </Grid>
+                <VerticalStackLayout Grid.Row="1" VerticalOptions="End">
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="6">
+                        <Image HeightRequest="20" Source="logo" />
+                        <Label
+                            CharacterSpacing="3"
+                            FontFamily="Bold"
+                            Text="MOVIE"
+                            TextColor="LightGray" />
+                    </HorizontalStackLayout>
+                    <Label
+                        FontFamily="Bold"
+                        FontSize="40"
+                        HorizontalOptions="Center"
+                        Text="SPIDER MAN"
+                        TextColor="White" />
+                    <Label
+                        FontSize="10"
+                        HorizontalTextAlignment="Center"
+                        Text="Slick . Psychological . Thriller . Love . Obsession . US . Dark" />
+                    <Grid
+                        Padding="25,10"
+                        ColumnDefinitions="*,*,*"
+                        ColumnSpacing="30"
+                        HorizontalOptions="Fill"
+                        RowDefinitions="Auto,Auto"
+                        RowSpacing="6">
+                        <Image HeightRequest="20">
+                            <Image.Source>
+                                <FontImageSource FontFamily="MaterialIcons" Glyph="{x:Static icons:IconFont.Check}" />
+                            </Image.Source>
+                        </Image>
+                        <Label
+                            Grid.Row="1"
+                            FontSize="8"
+                            HorizontalTextAlignment="Center"
+                            Text="My List" />
+
+                        <Button
+                            Grid.RowSpan="2"
+                            Grid.Column="1"
+                            Padding="20,0"
+                            Background="White"
+                            CornerRadius="4"
+                            FontFamily="Bold"
+                            FontSize="12"
+                            Text="Play"
+                            TextColor="Black"
+                            VerticalOptions="Center">
+                            <Button.ImageSource>
+                                <FontImageSource
+                                    FontFamily="MaterialIcons"
+                                    Glyph="{x:Static icons:IconFont.Play_arrow}"
+                                    Size="15"
+                                    Color="Black" />
+                            </Button.ImageSource>
+                        </Button>
+
+                        <Image Grid.Column="2" HeightRequest="20">
+                            <Image.Source>
+                                <FontImageSource FontFamily="MaterialIcons" Glyph="{x:Static icons:IconFont.Info_outline}" />
+                            </Image.Source>
+                        </Image>
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            FontSize="8"
+                            HorizontalTextAlignment="Center"
+                            Text="My List" />
+                    </Grid>
+
+                </VerticalStackLayout>
+                <VerticalStackLayout Grid.Row="2">
+                    <Label
+                        Padding="10"
+                        FontFamily="Bold"
+                        Text="Because you watched The Good Doctor" />
+                    <CollectionView HeightRequest="160" ItemsSource="{Binding MoviesList}">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="10,0">
+                                    <Image
+                                        Aspect="AspectFill"
+                                        BackgroundColor="Transparent"
+                                        HeightRequest="160"
+                                        Source="{Binding .}"
+                                        WidthRequest="106">
+                                        <Image.Clip>
+                                            <RoundRectangleGeometry CornerRadius="8" Rect="0,0,106,160" />
+                                        </Image.Clip>
+                                    </Image>
+                                </Grid>
+
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <Label
+                        Padding="10,20,10,10"
+                        FontFamily="Bold"
+                        Text="Continue Watching for Aswin" />
+                    <CollectionView HeightRequest="160" ItemsSource="{Binding MoviesList}">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="10,0">
+                                    <Image
+                                        Aspect="AspectFill"
+                                        BackgroundColor="Transparent"
+                                        HeightRequest="160"
+                                        Source="{Binding .}"
+                                        WidthRequest="106">
+                                        <Image.Clip>
+                                            <RoundRectangleGeometry CornerRadius="8" Rect="0,0,106,160" />
+                                        </Image.Clip>
+                                    </Image>
+                                </Grid>
+
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+
+                </VerticalStackLayout>
+
+            </Grid>
+
+
+
+        </ScrollView>
+        <Border Background="Black" Opacity=".1" />
+        <Image
+            Margin="20,0,0,0"
+            HeightRequest="40"
+            HorizontalOptions="Start"
+            Source="logo" />
+        <Image
+            Margin="10,0,70,0"
+            HeightRequest="30"
+            HorizontalOptions="End">
+            <Image.Source>
+                <FontImageSource FontFamily="MaterialIcons" Glyph="{x:Static icons:IconFont.Search}" />
+            </Image.Source>
+        </Image>
+        <Image
+            Margin="0,0,20,0"
+            Aspect="AspectFill"
+            HeightRequest="30"
+            HorizontalOptions="End"
+            Source="beastposter"
+            WidthRequest="30">
+            <Image.Clip>
+                <RoundRectangleGeometry CornerRadius="5" Rect="0,0,30,30" />
+            </Image.Clip>
+        </Image>
+    </Grid>
+</ContentPage>
