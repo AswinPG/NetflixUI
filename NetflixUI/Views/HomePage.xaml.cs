@@ -9,4 +9,9 @@ public partial class HomePage : ContentPage
 		InitializeComponent();
 		BindingContext = vm;
 	}
+
+    private void ScrollView_Scrolled(object sender, ScrolledEventArgs e)
+    {
+
+    }
 }

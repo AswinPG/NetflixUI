@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetflixUI", "NetflixUI\NetflixUI.csproj", "{C438C87A-BC40-4E29-8861-247609A88F0B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetflixUI.MR", "NetflixUI.MR\NetflixUI.MR.csproj", "{F64BCDE7-AC24-4AB2-BAE8-247436E1E975}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,12 @@ Global
 		{C438C87A-BC40-4E29-8861-247609A88F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C438C87A-BC40-4E29-8861-247609A88F0B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C438C87A-BC40-4E29-8861-247609A88F0B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F64BCDE7-AC24-4AB2-BAE8-247436E1E975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F64BCDE7-AC24-4AB2-BAE8-247436E1E975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F64BCDE7-AC24-4AB2-BAE8-247436E1E975}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F64BCDE7-AC24-4AB2-BAE8-247436E1E975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F64BCDE7-AC24-4AB2-BAE8-247436E1E975}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F64BCDE7-AC24-4AB2-BAE8-247436E1E975}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
